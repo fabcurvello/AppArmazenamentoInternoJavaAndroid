@@ -1,12 +1,14 @@
 package br.com.fabriciocurvello.apparmazenamentointernojavaandroid;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -19,6 +21,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILE_NAME = "dados.txt";
+    private static final String TEXT_VIEW_STATE = "textViewState";
     private EditText etEntradaMsg;
     private TextView tvExibeMsg;
     private Button btSalvar;
@@ -78,6 +81,22 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
             tvExibeMsg.setText("Erro ao carregar a mensagem.");
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Salva o estado do TextView no Bundle
+        outState.putString(TEXT_VIEW_STATE, tvExibeMsg.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restaura o estado do TextView após a rotação
+        if (savedInstanceState != null) {
+            tvExibeMsg.setText(savedInstanceState.getString(TEXT_VIEW_STATE));
         }
     }
 }
