@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/et_entrada_texto"
+        android:id="@+id/et_entrada_msg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -28,11 +28,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:text="Salvar Texto"
+        android:text="Salvar Mensagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_entrada_texto" />
+        app:layout_constraintTop_toBottomOf="@id/et_entrada_msg" />
 
     <Button
         android:id="@+id/bt_carregar"
@@ -41,21 +41,21 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:text="Carregar Texto"
+        android:text="Carregar Mensagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_salvar" />
 
     <TextView
-        android:id="@+id/tv_exibe_texto"
+        android:id="@+id/tv_exibe_msg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:padding="16dp"
-        android:text="Texto Carregado Aparece Aqui"
+        android:text="Mensagem Carregada Aparece Aqui"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -19,8 +19,8 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FILE_NAME = "dados.txt";
-    private EditText etEntradaTexto;
-    private TextView tvExibeTexto;
+    private EditText etEntradaMsg;
+    private TextView tvExibeMsg;
     private Button btSalvar;
     private Button btCarregar;
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        etEntradaTexto = findViewById(R.id.et_entrada_texto);
-        tvExibeTexto = findViewById(R.id.tv_exibe_texto);
+        etEntradaMsg = findViewById(R.id.et_entrada_msg);
+        tvExibeMsg = findViewById(R.id.tv_exibe_msg);
         btSalvar = findViewById(R.id.bt_salvar);
         btCarregar = findViewById(R.id.bt_carregar);
 
@@ -57,14 +57,14 @@ public class MainActivity extends AppCompatActivity {
     } // fim do onCreate
 
     private void salvarDados() {
-        String texto = etEntradaTexto.getText().toString();
+        String mensagem = etEntradaMsg.getText().toString();
         try (FileOutputStream fos = openFileOutput(FILE_NAME, MODE_PRIVATE)) {
-            fos.write(texto.getBytes());
-            etEntradaTexto.setText("");
-            tvExibeTexto.setText("Texto salvo com sucesso!");
+            fos.write(mensagem.getBytes());
+            etEntradaMsg.setText("");
+            tvExibeMsg.setText("Mensagem salva com sucesso!");
         } catch (IOException e) {
             e.printStackTrace();
-            tvExibeTexto.setText("Erro ao salvar o texto");
+            tvExibeMsg.setText("Erro ao salvar a mensagem.");
         }
     }
 
@@ -73,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
             int size = fis.available();
             byte[] buffer = new byte[size];
             fis.read(buffer);
-            String texto = new String(buffer);
-            tvExibeTexto.setText(texto);
+            String mensagem = new String(buffer);
+            tvExibeMsg.setText(mensagem);
         } catch (IOException e) {
             e.printStackTrace();
-            tvExibeTexto.setText("Erro ao carregar texto");
+            tvExibeMsg.setText("Erro ao carregar a mensagem.");
         }
     }
 }
