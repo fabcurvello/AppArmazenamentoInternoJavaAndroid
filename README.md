@@ -46,7 +46,6 @@ Outros repositórios de aula com o mesmo tema:
 
 - [AppArmazenamentoInternoAnimaUNA](https://github.com/fabcurvello/AppArmazenamentoInternoAnimaUNA)
 - [AppArmazenamentoInternoAnima](https://github.com/fabcurvello/AppArmazenamentoInternoAnima)
-- [AppArmazenamentoInternoJava](https://github.com/fabcurvello/AppArmazenamentoInternoJava)
 - [AppArmazenamentoInternoKotlin](https://github.com/fabcurvello/AppArmazenamentoInternoKotlin)
 
 ## Autor
